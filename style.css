@@ -1,0 +1,265 @@
+html,
+body {
+  height: 100%; /* Asegura que ocupen todo el alto de la ventana */
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina rellenos por defecto */
+}
+
+/* PALETA DE COLORES */
+.color1-bg {
+  background: wheat;
+}
+
+.color2-bg {
+  background: rgb(22, 16, 18);
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    90deg,
+    rgb(53, 36, 46) 2%,
+    rgb(34, 27, 30) 17%,
+    rgba(22, 16, 18, 1) 40%,
+    rgb(16, 12, 13) 50%,
+    rgba(22, 16, 18, 1) 60%,
+    rgb(34, 27, 30) 83%,
+    rgb(53, 36, 46) 98%
+  );
+}
+
+.color1 {
+  color: rgb(244, 244, 244);
+}
+
+/* .color2 {
+  color: rgba(215, 156, 182, 0.509);
+} */
+
+.color2 {
+  color: rgba(237, 170, 199, 0.522);
+}
+
+.color4 {
+  color: rgb(204, 150, 173);
+}
+
+.color3 {
+  color: rgb(238, 229, 217);
+}
+
+.color3-bg {
+  background: rgba(22, 16, 18, 0.342);
+}
+
+/* FONTS */
+.font1 {
+  font-family: 'Playwrite ZA', serif;
+}
+
+.font2 {
+  font-family: 'DM Serif Display', serif;
+}
+
+.font3 {
+  font-family: 'Montserrat', serif;
+}
+
+/* image background */
+.image-bg {
+  background-image: url('/assets/bg/glitter.jpg');
+  background-size: cover; /* Ajusta la imagen para que se vea completa sin recortarse */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center;
+  width: 100vw; /* Asegura que el ancho sea igual al de la pantalla */
+  height: 100vh;
+  z-index: -3; /* Detrás de todo */
+}
+
+/* size */
+
+.size1 {
+  font-size: 15rem;
+}
+
+.size2 {
+  font-size: 4rem;
+}
+
+.size3 {
+  font-size: 4rem;
+}
+
+.size4 {
+  font-size: 1.3rem;
+}
+
+.size5 {
+  font-size: 1.8rem;
+}
+
+.size6 {
+  font-size: 1.1rem;
+}
+
+/* WEIGHT */
+
+.weight1 {
+  font-weight: 200;
+}
+
+/* SHADOW */
+.shadow1 {
+  filter: drop-shadow(0 3px 4px rgba(28, 26, 27, 0.898));
+}
+
+.textShadow {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* EFECTOS */
+
+.glow-effect {
+  color: white; /* Color del texto */
+  /* text-shadow: 0 0 10px rgba(2, 2, 2, 0.6), 0 0 10px rgba(2, 2, 2, 0.6),
+    0 0 20px rgba(2, 2, 2, 0.6); */
+  animation: glow 3s infinite alternate; /* Animación infinita */
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 1px rgba(233, 193, 220, 0.6), 0 0 2px rgba(233, 193, 220, 0.6);
+  }
+  30% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 2px rgba(233, 193, 220, 0.6), 0 0 4px rgba(233, 193, 220, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(233, 193, 220, 0.6), 0 0 20px rgba(233, 193, 220, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+      0 0 30px rgba(167, 85, 136, 0.633), 0 0 40px rgba(167, 85, 136, 0.633);
+  }
+}
+
+/* glitter efect */
+
+/* Contenedor de los destellos */
+.destellos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2; /* Entre el fondo y el contenido */
+  pointer-events: none; /* No interfiere con interacciones */
+}
+
+/* Estilos de los puntos */
+.punto {
+  position: absolute;
+  width: 6px; /* Tamaño del punto */
+  height: 6px;
+  background-color: rgb(255, 241, 241); /* Color fijo del punto */
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(26, 24, 24, 0.7); /* Sombra inicial tenue */
+  animation: brillo 2s infinite ease-in-out; /* Brillo cíclico */
+}
+
+/* Puntos azules */
+.punto.azul {
+  background-color: rgb(246, 171, 212); /* Azul */
+  box-shadow: 0 0 5px rgba(182, 99, 156, 0.7); /* Glow azul */
+  width: 4px; /* Tamaño del punto */
+  height: 4px;
+  animation: brillo 2s infinite ease-in-out,
+    desplazamiento 8s infinite ease-in-out; /* Solo aquí se incluye desplazamiento */
+}
+
+/* Puntos rojos */
+.punto.rojo {
+  background-color: rgb(243, 192, 175); /* Rojo */
+  box-shadow: 0 0 5px rgba(184, 102, 102, 0.7); /* Glow rojo */
+  width: 5px; /* Tamaño del punto */
+  height: 5px;
+}
+
+/* Puntos rojos */
+.punto.mini {
+  background-color: rgb(255, 241, 241); /* Color fijo del punto */
+  box-shadow: 0 0 2px rgba(26, 24, 24, 0.7); /* Sombra inicial tenue */
+  width: 2px; /* Tamaño del punto */
+  height: 2px;
+}
+
+/* Animación de brillo */
+@keyframes brillo {
+  0%,
+  100% {
+    box-shadow: 0 0 2px rgb(241, 239, 255); /* Sombra suave */
+  }
+  50% {
+    box-shadow: 0 0 12px rgb(251, 248, 255); /* Sombra intensa */
+  }
+}
+
+/* Animación de desplazamiento */
+@keyframes desplazamiento {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(2.5px, -2.5px);
+  }
+  50% {
+    transform: translate(-2.5px, 2.5px);
+  }
+  75% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Añadir diferentes delays para los puntos */
+.punto:nth-child(1) {
+  animation-delay: 0s;
+}
+.punto:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.punto:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.punto:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.punto:nth-child(5) {
+  animation-delay: 1.6s;
+}
+.punto:nth-child(6) {
+  animation-delay: 0.2s;
+}
+.punto:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.punto:nth-child(8) {
+  animation-delay: 1s;
+}
+.punto:nth-child(9) {
+  animation-delay: 1.4s;
+}
+.punto:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+/* Contenedor del contenido principal */
+.contenido {
+  position: relative;
+  z-index: 1; /* Encima de los destellos */
+  padding: 20px;
+  color: #fff;
+}
